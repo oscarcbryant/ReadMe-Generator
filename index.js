@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-// TODO: Create an array of questions for user input
+// Below is the array of questions for user input
 const promptUser = () => {
     return inquirer.prompt([
     {
@@ -30,7 +30,7 @@ const promptUser = () => {
         type: 'list',
         name: 'license',
         message: "Which license would you like to select?",
-        choices: ["MIT", "Apache"]
+        choices: ["MIT", "Apache", "Mozilla"]
     },
     {
         type: 'input',
@@ -57,15 +57,18 @@ const promptUser = () => {
 }
 
 
-
+// generateLicense function creates the licence badge we are applying to our code
 const generateLicense = (license) => {
     if (license === 'MIT') {
         return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
     } else if (license === 'Apache') {
         return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    } else if (license === 'Mozilla') {
+        return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)"
     }
 }
 
+// generate ReadMe function creates the .md file with the below contents
 const generateReadMe = (answers) => {
 
 return `# ${answers.name} ${generateLicense(answers.license)}
@@ -88,6 +91,9 @@ ${answers.installation}
 ${answers.usage}
 
 ## License
+
+Click the Badge for more information: 
+
 ${generateLicense(answers.license)}
 
 ## Contributors 
@@ -114,10 +120,8 @@ ${answers.email}`
 
 }
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
+// Function to call README.ME
 const init = () => {
     promptUser()
     .then((answers) => {
