@@ -92,7 +92,12 @@ ${answers.usage}
 
 ## License
 
+License selected: 
+
+${answers.license}
+
 Click the Badge for more information: 
+
 
 ${generateLicense(answers.license)}
 
