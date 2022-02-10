@@ -9,6 +9,7 @@ Our README files will include links to access seperate sections of the page and 
 ## Installation
 To understand steps required to Install our README files, please watch video below:
 
+![](ReadMe-Generator-Gif.gif)
 
 ## Usage
 
