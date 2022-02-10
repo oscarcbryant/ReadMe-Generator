@@ -13,6 +13,9 @@ To understand steps required to Install our README files, please watch video bel
 
 ## Usage
 
+See below for link to gif showing how to use this readme generator application:
+https://watch.screencastify.com/v/3BHJOsCXEgcbYQ9JMWzH
+
 ## Credits
 
 This repo was built by 
